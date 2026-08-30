@@ -1,0 +1,13 @@
+{
+  "name": "nsfw-fantasy-data",
+  "version": "0.1.0",
+  "description": "Data layer for the North to South Fantasy Report - pulls and archives league data from the Sleeper API.",
+  "type": "module",
+  "scripts": {
+    "sync": "node --env-file=.env src/sync.js",
+    "sync:week": "node --env-file=.env src/sync.js --week"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
