@@ -1,0 +1,60 @@
+{
+  "created": 1786214496939,
+  "creators": [
+    "1024018527671398400"
+  ],
+  "draft_id": "1391888119229337600",
+  "draft_order": {
+    "1000593498950688768": 5,
+    "1024018527671398400": 2,
+    "1060953726460063744": 7,
+    "1060986035724734464": 10,
+    "1391904866346999808": 4,
+    "1391906347640954880": 1,
+    "1391909376389808129": 8,
+    "1391915219587989504": 9,
+    "1391916584125108224": 6,
+    "1392739735977328640": 3
+  },
+  "last_message_id": "1397421725355880448",
+  "last_message_time": 1787533811467,
+  "last_picked": 1787533568202,
+  "league_id": "1391888117673238528",
+  "metadata": {
+    "description": "",
+    "league_type": "1",
+    "name": "North to South Fantasy Worldwide",
+    "scoring_type": "idp_1qb",
+    "show_team_names": "0"
+  },
+  "season": "2026",
+  "season_type": "regular",
+  "settings": {
+    "alpha_sort": 0,
+    "autopause_enabled": 0,
+    "autopause_end_time": 840,
+    "autopause_start_time": 120,
+    "autostart": 0,
+    "cpu_autopick": 1,
+    "enforce_position_limits": 1,
+    "nomination_timer": 60,
+    "pick_timer": 120,
+    "player_type": 0,
+    "reversal_round": 0,
+    "rounds": 17,
+    "slots_bn": 7,
+    "slots_def": 1,
+    "slots_flex": 1,
+    "slots_idp_flex": 1,
+    "slots_k": 1,
+    "slots_qb": 1,
+    "slots_rb": 2,
+    "slots_te": 1,
+    "slots_wr": 2,
+    "teams": 10
+  },
+  "sport": "nfl",
+  "start_time": 1787529605833,
+  "status": "complete",
+  "type": "snake"
+}

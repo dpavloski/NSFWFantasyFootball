@@ -1,0 +1,145 @@
+[
+  {
+    "avatar": "b319fdf8b7b5b0359d3c78622ba4d70c",
+    "display_name": "Trooptroop",
+    "is_bot": false,
+    "is_owner": null,
+    "league_id": "1391888117673238528",
+    "metadata": {
+      "allow_pn": "on",
+      "avatar": "https://sleepercdn.com/uploads/9e28d5cfefd0a9de3853ca23d80fdd75.jpg",
+      "mention_pn": "on"
+    },
+    "settings": null,
+    "user_id": "1000593498950688768"
+  },
+  {
+    "avatar": "82aec8e811b839b8ec25d7b458afd57b",
+    "display_name": "ProfPav",
+    "is_bot": false,
+    "is_owner": true,
+    "league_id": "1391888117673238528",
+    "metadata": {
+      "allow_pn": "on",
+      "allow_sms": "on",
+      "avatar": "https://sleepercdn.com/uploads/375cc6bf3a65d83e753dba65a5f6c031.jpg",
+      "mention_pn": "on",
+      "team_name": "Prof. Pav's Prized Pupils"
+    },
+    "settings": null,
+    "user_id": "1024018527671398400"
+  },
+  {
+    "avatar": "b3338675f635c2c1f42b469621d38ec6",
+    "display_name": "MrPav53",
+    "is_bot": false,
+    "is_owner": null,
+    "league_id": "1391888117673238528",
+    "metadata": {
+      "allow_pn": "on",
+      "avatar": "https://sleepercdn.com/uploads/aed895841d9abef6b866e4b05839ad99.jpg",
+      "mention_pn": "on",
+      "team_name": "Dr. Quebec Toboggan"
+    },
+    "settings": null,
+    "user_id": "1060953726460063744"
+  },
+  {
+    "avatar": "8eb8f8bf999945d523f2c4033f70473e",
+    "display_name": "TOleet",
+    "is_bot": false,
+    "is_owner": null,
+    "league_id": "1391888117673238528",
+    "metadata": {
+      "allow_pn": "on",
+      "mention_pn": "on"
+    },
+    "settings": null,
+    "user_id": "1060986035724734464"
+  },
+  {
+    "avatar": "7572250c2fb084c434fed0e82229e183",
+    "display_name": "coachcase44",
+    "is_bot": false,
+    "is_owner": null,
+    "league_id": "1391888117673238528",
+    "metadata": {
+      "allow_pn": "on",
+      "avatar": "https://sleepercdn.com/uploads/624ef8402a22d935e7e3325e6a72b850.jpg",
+      "mention_pn": "on",
+      "team_name": "Arthur’s Buddies"
+    },
+    "settings": null,
+    "user_id": "1391904866346999808"
+  },
+  {
+    "avatar": "f2ae7d8932d5daad92a25b92d6dbf1ad",
+    "display_name": "Keith517",
+    "is_bot": false,
+    "is_owner": null,
+    "league_id": "1391888117673238528",
+    "metadata": {
+      "allow_pn": "on",
+      "avatar": "https://sleepercdn.com/uploads/4532a1b99b6a2c8be845e8fa051a91a0.jpg",
+      "mention_pn": "on",
+      "team_name": "The Team Up North"
+    },
+    "settings": null,
+    "user_id": "1391906347640954880"
+  },
+  {
+    "avatar": "ab5a17208cd7ed4199ab488646153799",
+    "display_name": "Jarvinators",
+    "is_bot": false,
+    "is_owner": null,
+    "league_id": "1391888117673238528",
+    "metadata": {
+      "allow_pn": "on",
+      "mention_pn": "on"
+    },
+    "settings": null,
+    "user_id": "1391909376389808129"
+  },
+  {
+    "avatar": "578c6b253dd7b4bab45382e1af102204",
+    "display_name": "Kosmalski",
+    "is_bot": false,
+    "is_owner": null,
+    "league_id": "1391888117673238528",
+    "metadata": {
+      "allow_pn": "on",
+      "avatar": "https://sleepercdn.com/uploads/e86fd928c4eb8be5a1327edc0ee9075d.jpg",
+      "mention_pn": "on",
+      "team_name": "Fruit Vendors"
+    },
+    "settings": null,
+    "user_id": "1391915219587989504"
+  },
+  {
+    "avatar": "7572250c2fb084c434fed0e82229e183",
+    "display_name": "ExSupe",
+    "is_bot": false,
+    "is_owner": null,
+    "league_id": "1391888117673238528",
+    "metadata": {
+      "allow_pn": "on",
+      "mention_pn": "on"
+    },
+    "settings": null,
+    "user_id": "1391916584125108224"
+  },
+  {
+    "avatar": "813d6d39bf18f619d9ea1610ab83c6fb",
+    "display_name": "tuonni",
+    "is_bot": false,
+    "is_owner": null,
+    "league_id": "1391888117673238528",
+    "metadata": {
+      "allow_pn": "on",
+      "mention_pn": "on",
+      "team_name": "BRAND NEW LIONS"
+    },
+    "settings": null,
+    "user_id": "1392739735977328640"
+  }
+]
