@@ -27,8 +27,6 @@ async function syncCore() {
     sleeper.getNflState(),
   ]);
 
-  // Attach our real-name manager mapping onto each roster so downstream
-  // content generation never has to re-join this itself.
   const rostersWithManagers = rosters.map((r) => ({
     ...r,
     manager: managerForRoster(r.roster_id),
@@ -39,8 +37,6 @@ async function syncCore() {
   await writeJson(`${season}/rosters.json`, rostersWithManagers);
   await writeJson(`${season}/nfl-state.json`, nflState);
 
-  // Draft(s) + picks. A league usually has exactly one draft per season,
-  // but this handles re-drafts/supplemental drafts too.
   if (drafts.length === 0) {
     console.log("  no drafts found for this league yet - skipping picks.");
   }
@@ -53,6 +49,13 @@ async function syncCore() {
     await writeJson(`${season}/draft-${draft.draft_id}.json`, draft);
     await writeJson(`${season}/draft-${draft.draft_id}-picks.json`, picksWithManagers);
   }
+
+  // Full NFL player reference (~5MB) - needed to turn player IDs in
+  // rosters/picks/matchups into actual names. Refreshed every sync so
+  // new call-ups, trades, and defense/team changes stay current.
+  console.log("Fetching full NFL player reference data...");
+  const players = await sleeper.getAllPlayers();
+  await writeJson(`players/nfl-players.json`, players);
 
   return { season, nflState };
 }
