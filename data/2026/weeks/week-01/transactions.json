@@ -12,12 +12,12 @@
     "adds": {
       "BAL": 1
     },
-    "consenter_ids": [
-      1
-    ],
     "drops": {
       "SF": 1
     },
+    "consenter_ids": [
+      1
+    ],
     "roster_ids": [
       1
     ],
@@ -37,12 +37,12 @@
     "adds": {
       "8132": 3
     },
-    "consenter_ids": [
-      3
-    ],
     "drops": {
       "8111": 3
     },
+    "consenter_ids": [
+      3
+    ],
     "roster_ids": [
       3
     ],
@@ -62,10 +62,10 @@
     "adds": {
       "8111": 3
     },
+    "drops": null,
     "consenter_ids": [
       3
     ],
-    "drops": null,
     "roster_ids": [
       3
     ],
@@ -85,12 +85,12 @@
     "adds": {
       "7640": 3
     },
-    "consenter_ids": [
-      3
-    ],
     "drops": {
       "9480": 3
     },
+    "consenter_ids": [
+      3
+    ],
     "roster_ids": [
       3
     ],
@@ -110,12 +110,12 @@
     "adds": {
       "JAX": 3
     },
-    "consenter_ids": [
-      3
-    ],
     "drops": {
       "WAS": 3
     },
+    "consenter_ids": [
+      3
+    ],
     "roster_ids": [
       3
     ],
