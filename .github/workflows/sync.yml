@@ -1,0 +1,32 @@
+name: Weekly Sleeper Sync
+
+on:
+  schedule:
+    - cron: "0 13 * * 2"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run weekly sync
+        env:
+          LEAGUE_ID: ${{ vars.LEAGUE_ID }}
+        run: node src/sync.js --week
+
+      - name: Commit updated data
+        run: |
+          git config user.name "nsfw-fantasy-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet && echo "No data changes this week." || git commit -m "Weekly sync: $(date -u +%Y-%m-%d)"
+          git push
