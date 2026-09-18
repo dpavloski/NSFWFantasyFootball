@@ -83,8 +83,29 @@ async function main() {
   const weekArgIndex = process.argv.indexOf("--week");
   if (weekArgIndex !== -1) {
     const weekArg = process.argv[weekArgIndex + 1];
-    const week = weekArg ? parseInt(weekArg, 10) : nflState.week;
-    await syncWeek(season, week);
+
+    if (weekArg) {
+      // Explicit week requested (e.g. manual backfill) - just sync that one.
+      await syncWeek(season, parseInt(weekArg, 10));
+    } else {
+      // No explicit week: sync BOTH the week Sleeper currently reports as
+      // "current" (nflState.week) AND the week before it.
+      //
+      // Why: once a week's games finish, nflState.week immediately rolls
+      // forward to the next (not-yet-played) week. If we only ever synced
+      // nflState.week, we'd fetch the upcoming week's matchups (all 0s,
+      // since it hasn't been played) and never go back to re-pull the
+      // week that just finished with its final scores. Syncing the
+      // previous week too means the just-completed week's matchups get
+      // overwritten with real, final point totals on the very next run.
+      const currentWeek = nflState.week;
+      const previousWeek = currentWeek - 1;
+
+      if (previousWeek >= 1) {
+        await syncWeek(season, previousWeek);
+      }
+      await syncWeek(season, currentWeek);
+    }
   }
 
   console.log("Done.");
