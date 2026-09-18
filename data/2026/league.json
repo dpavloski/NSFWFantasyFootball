@@ -53,7 +53,7 @@
     "trade_review_days": 2,
     "bench_lock": 0,
     "offseason_adds": 0,
-    "leg": 1,
+    "leg": 2,
     "reserve_slots": 1,
     "reserve_allow_cov": 0,
     "daily_waivers_last_ran": 23
@@ -62,9 +62,6 @@
   "company_id": null,
   "sport": "nfl",
   "season_type": "regular",
-  "season": "2026",
-  "shard": 750,
-  "last_message_id": "1405625149402742784",
   "scoring_settings": {
     "sack": 1,
     "fgm_40_49": 4,
@@ -136,19 +133,26 @@
     "st_ff": 1,
     "idp_tkl_ast": 1
   },
-  "draft_id": "1391888119229337600",
+  "season": "2026",
+  "shard": 750,
+  "last_message_id": "1406064195304210432",
   "last_author_avatar": null,
   "last_author_display_name": "sys",
   "last_author_id": "166666666666666666",
   "last_author_is_bot": true,
   "last_message_attachment": null,
   "last_message_text_map": null,
-  "last_message_time": 1789489660171,
+  "last_message_time": 1789594336872,
   "last_pinned_message_id": null,
+  "draft_id": "1391888119229337600",
   "last_read_id": null,
   "league_id": "1391888117673238528",
   "previous_league_id": null,
   "group_id": null,
+  "bracket_id": null,
+  "bracket_overrides_id": null,
+  "loser_bracket_id": null,
+  "loser_bracket_overrides_id": null,
   "roster_positions": [
     "QB",
     "RB",
@@ -168,9 +172,5 @@
     "BN",
     "BN"
   ],
-  "bracket_id": null,
-  "bracket_overrides_id": null,
-  "loser_bracket_id": null,
-  "loser_bracket_overrides_id": null,
   "total_rosters": 10
 }

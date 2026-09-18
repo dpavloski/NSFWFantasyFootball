@@ -52,7 +52,16 @@
     "league_id": "1391888117673238528",
     "metadata": {
       "allow_pn": "on",
-      "mention_pn": "on"
+      "league_report_pn": "off",
+      "mention_pn": "on",
+      "player_like_pn": "off",
+      "player_nickname_update": "off",
+      "team_name_update": "off",
+      "trade_block_pn": "off",
+      "transaction_commissioner": "off",
+      "transaction_free_agent": "off",
+      "transaction_trade": "off",
+      "transaction_waiver": "off"
     },
     "settings": null,
     "user_id": "1060986035724734464"
