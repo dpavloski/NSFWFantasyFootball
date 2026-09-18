@@ -57,6 +57,26 @@ async function syncCore() {
   const players = await sleeper.getAllPlayers();
   await writeJson(`players/nfl-players.json`, players);
 
+  // The full player file above is ~19MB - far too big to ship to browsers
+  // just to label a handful of roster spots. Build a slim lookup
+  // containing only players who are actually on one of our 10 rosters
+  // (name/position/team only), for the site's roster-viewer to fetch.
+  const usedPlayerIds = new Set();
+  rostersWithManagers.forEach((r) => {
+    (r.players || []).forEach((pid) => usedPlayerIds.add(pid));
+  });
+  const playersLite = {};
+  for (const pid of usedPlayerIds) {
+    const p = players[pid];
+    if (!p) continue;
+    playersLite[pid] = {
+      name: p.full_name || [p.first_name, p.last_name].filter(Boolean).join(" ") || pid,
+      position: p.position || (p.fantasy_positions || [])[0] || "",
+      team: p.team || "",
+    };
+  }
+  await writeJson(`${season}/players-lite.json`, playersLite);
+
   return { season, nflState };
 }
 
