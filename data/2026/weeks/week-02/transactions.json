@@ -12,12 +12,12 @@
     "adds": {
       "2020": 1
     },
-    "drops": {
-      "1945": 1
-    },
     "consenter_ids": [
       1
     ],
+    "drops": {
+      "1945": 1
+    },
     "roster_ids": [
       1
     ],
@@ -37,12 +37,12 @@
     "adds": {
       "TB": 10
     },
-    "drops": {
-      "8126": 10
-    },
     "consenter_ids": [
       10
     ],
+    "drops": {
+      "8126": 10
+    },
     "roster_ids": [
       10
     ],
@@ -60,12 +60,12 @@
     "creator": "1391904866346999808",
     "transaction_id": "1405914434131550208",
     "adds": null,
-    "drops": {
-      "5947": 2
-    },
     "consenter_ids": [
       2
     ],
+    "drops": {
+      "5947": 2
+    },
     "roster_ids": [
       2
     ],
