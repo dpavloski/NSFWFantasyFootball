@@ -256,6 +256,70 @@
     color: var(--chalk-dim);
     text-transform: uppercase;
   }
+
+  .pr-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .pr-row {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    background: var(--slate);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 16px 18px;
+  }
+  .pr-rank {
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    color: var(--red-bright);
+    text-align: center;
+    line-height: 1;
+  }
+  .pr-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .pr-team {
+    font-family: 'Anton', sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: var(--chalk);
+  }
+  .pr-mgr {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--chalk-dim);
+  }
+  .pr-record {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--red-bright);
+    margin-left: auto;
+  }
+  .pr-body p {
+    margin: 0;
+    color: var(--chalk-dim);
+    font-size: 14.5px;
+  }
+  .pr-note {
+    margin-top: 16px;
+    color: var(--chalk-dim);
+    font-size: 12.5px;
+    font-family: 'IBM Plex Mono', monospace;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 480px) {
+    .pr-row { grid-template-columns: 36px 1fr; }
+    .pr-rank { font-size: 22px; }
+    .pr-record { margin-left: 0; }
+  }
 </style>
 </head>
 <body>
@@ -312,20 +376,92 @@
       </div>
     </section>
 
-    <section id="league">
-      <p class="eyebrow">The League</p>
-      <div class="roster">
-        <div class="player"><span class="num">01</span><div class="who"><div class="name">Daine Pavloski</div><div class="handle">ProfPav</div></div></div>
-        <div class="player"><span class="num">02</span><div class="who"><div class="name">Steve Case</div><div class="handle">coachcase44</div></div></div>
-        <div class="player"><span class="num">03</span><div class="who"><div class="name">Nick Pavloski</div><div class="handle">MrPav53</div></div></div>
-        <div class="player"><span class="num">04</span><div class="who"><div class="name">Robby English</div><div class="handle">Trooptroop</div></div></div>
-        <div class="player"><span class="num">05</span><div class="who"><div class="name">Keith Day</div><div class="handle">Keith517</div></div></div>
-        <div class="player"><span class="num">06</span><div class="who"><div class="name">Erin Pavloski</div><div class="handle">Jarvinators</div></div></div>
-        <div class="player"><span class="num">07</span><div class="who"><div class="name">Ben Kosmalski</div><div class="handle">Kosmalski</div></div></div>
-        <div class="player"><span class="num">08</span><div class="who"><div class="name">Mark Pavloski</div><div class="handle">ExSupe</div></div></div>
-        <div class="player"><span class="num">09</span><div class="who"><div class="name">Tyler Olinske</div><div class="handle">TOleet</div></div></div>
-        <div class="player"><span class="num">10</span><div class="who"><div class="name">Tony Falbo</div><div class="handle">tuonni</div></div></div>
+    <section id="power-rankings">
+      <p class="eyebrow">Power Rankings &middot; Week 1</p>
+      <div class="pr-list">
+
+        <div class="pr-row">
+          <div class="pr-rank">1</div>
+          <div class="pr-body">
+            <div class="pr-head"><span class="pr-team">MrPav53</span><span class="pr-mgr">Nick Pavloski</span><span class="pr-record">1-0</span></div>
+            <p>Josh Allen led the way to the week's second-highest score, backing up one of the best rosters on paper in the league. Hard to argue with the results so far.</p>
+          </div>
+        </div>
+
+        <div class="pr-row">
+          <div class="pr-rank">2</div>
+          <div class="pr-body">
+            <div class="pr-head"><span class="pr-team">Kosmalski</span><span class="pr-mgr">Ben Kosmalski</span><span class="pr-record">0-1</span></div>
+            <p>The deepest roster in the league — Jonathan Taylor, Justin Jefferson, T.J. Watt — lost the tightest game of the week by 21.34 and still ranks this high. That's how good the draft was.</p>
+          </div>
+        </div>
+
+        <div class="pr-row">
+          <div class="pr-rank">3</div>
+          <div class="pr-body">
+            <div class="pr-head"><span class="pr-team">Jarvinators</span><span class="pr-mgr">Erin Pavloski</span><span class="pr-record">1-0</span></div>
+            <p>One of the best-built rosters in the league — Lamb, Achane, Hurts, Kyren Williams — delivered in Week 1 with a win.</p>
+          </div>
+        </div>
+
+        <div class="pr-row">
+          <div class="pr-rank">4</div>
+          <div class="pr-body">
+            <div class="pr-head"><span class="pr-team">tuonni</span><span class="pr-mgr">Tony Falbo</span><span class="pr-record">1-0</span></div>
+            <p>The literal high score of the week, built on six players in double digits rather than one big name. The running back depth behind Breece Hall is the one real question mark going forward.</p>
+          </div>
+        </div>
+
+        <div class="pr-row">
+          <div class="pr-rank">5</div>
+          <div class="pr-body">
+            <div class="pr-head"><span class="pr-team">ProfPav</span><span class="pr-mgr">Daine Pavloski</span><span class="pr-record">0-1</span></div>
+            <p>The most complete roster on paper in the league. A Week 1 loss doesn't erase that — talent says top-3, results say not yet.</p>
+          </div>
+        </div>
+
+        <div class="pr-row">
+          <div class="pr-rank">6</div>
+          <div class="pr-body">
+            <div class="pr-head"><span class="pr-team">Keith517</span><span class="pr-mgr">Keith Day</span><span class="pr-record">1-0</span></div>
+            <p>Bijan Robinson is about as safe a floor as exists in this league, and it showed in the tightest win of the week. The receiver room behind Rashee Rice is still a question.</p>
+          </div>
+        </div>
+
+        <div class="pr-row">
+          <div class="pr-rank">7</div>
+          <div class="pr-body">
+            <div class="pr-head"><span class="pr-team">TOleet</span><span class="pr-mgr">Tyler Olinske</span><span class="pr-record">1-0</span></div>
+            <p>A 1-0 record, powered by a monster Caleb Williams week, papering over a real roster question: Alvin Kamara and Travis Etienne share a backfield.</p>
+          </div>
+        </div>
+
+        <div class="pr-row">
+          <div class="pr-rank">8</div>
+          <div class="pr-body">
+            <div class="pr-head"><span class="pr-team">ExSupe</span><span class="pr-mgr">Mark Pavloski</span><span class="pr-record">0-1</span></div>
+            <p>The week's low score, but not for lack of ceiling — Christian McCaffrey just didn't get there. Too much talent here to stay ranked this low for long.</p>
+          </div>
+        </div>
+
+        <div class="pr-row">
+          <div class="pr-rank">9</div>
+          <div class="pr-body">
+            <div class="pr-head"><span class="pr-team">coachcase44</span><span class="pr-mgr">Steve Case</span><span class="pr-record">0-1</span></div>
+            <p>Matthew Stafford at 37 is exactly the shaky floor this roster was built around, and Week 1 didn't ease that concern. Puka Nacua and Brock Bowers deserve a better QB situation.</p>
+          </div>
+        </div>
+
+        <div class="pr-row">
+          <div class="pr-rank">10</div>
+          <div class="pr-body">
+            <div class="pr-head"><span class="pr-team">Trooptroop</span><span class="pr-mgr">Robby English</span><span class="pr-record">0-1</span></div>
+            <p>The week's biggest loss, and Ashton Jeanty's ankle situation still isn't fully resolved. A tough spot to open the season.</p>
+          </div>
+        </div>
+
       </div>
+      <p class="pr-note">Rankings weigh both draft-day roster quality and how each team has actually performed — not just this week's win/loss. First rankings of the season, so no movement to show yet; that starts next week.</p>
     </section>
 
   </div>
