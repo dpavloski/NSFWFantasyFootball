@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>All Recaps — North to South Fantasy Worldwide</title>
+<title>Week 1 Recap — North to South Fantasy Worldwide</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,41 +73,97 @@
     margin-top: 16px;
     color: var(--chalk-dim);
     font-size: 15px;
-    max-width: 520px;
+    max-width: 560px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .recap-entry {
-    display: block;
+  section { padding: 40px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin: 0 0 16px;
+  }
+
+  .overview p {
+    margin: 0 0 16px;
+    font-size: 16px;
+    color: var(--chalk);
+  }
+  .overview p:last-child { margin-bottom: 0; }
+
+  .matchup-recap {
     padding: 28px 0;
     border-bottom: 1px solid var(--line);
-    text-decoration: none;
-    color: inherit;
   }
-  .recap-entry:last-of-type { border-bottom: none; }
+  .matchup-recap:last-child { border-bottom: none; }
 
-  .recap-entry .week-label {
+  .matchup-recap .score-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 11.5px;
-    letter-spacing: 0.12em;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--chalk-dim);
+    margin-bottom: 10px;
+  }
+  .matchup-recap .score-line .win { color: var(--red-bright); font-weight: 600; }
+
+  .matchup-recap h2 {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 21px;
+    margin: 0 0 10px;
+  }
+  .matchup-recap p {
+    margin: 0;
+    color: var(--chalk-dim);
+    font-size: 15.5px;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .stat-card {
+    background: var(--slate);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 16px 18px;
+  }
+  .stat-card .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--red-bright);
     margin-bottom: 8px;
   }
-  .recap-entry h2 {
+  .stat-card .value {
     font-family: 'Anton', sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-    font-size: 24px;
-    margin: 0 0 8px;
-    transition: color 0.15s ease;
+    font-size: 20px;
+    margin-bottom: 4px;
   }
-  .recap-entry:hover h2 { color: var(--red-bright); }
-  .recap-entry p {
-    margin: 0;
+  .stat-card .sub {
     color: var(--chalk-dim);
-    font-size: 15px;
+    font-size: 13px;
+  }
+
+  .waiver-note {
+    margin-top: 18px;
+    color: var(--chalk-dim);
+    font-size: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    line-height: 1.7;
   }
 
   footer {
@@ -125,22 +181,114 @@
 
   <div class="marquee">
     <a class="back" href="../index.html">&larr; N/S FANTASY WORLDWIDE</a>
-    <span>ALL RECAPS</span>
+    <span>WEEK 1 RECAP &middot; <a class="back" href="index.html">ALL RECAPS</a></span>
   </div>
 
   <header class="hero">
-    <div class="eyebrow-top">2026 SEASON</div>
-    <h1 class="title">Weekly Recaps</h1>
-    <p class="dek">Every week's matchups, breakdowns, and stats that made us look twice — all in one place.</p>
+    <div class="eyebrow-top">WEEK 1 &middot; 2026 SEASON</div>
+    <h1 class="title">Opening Weekend Sets the Tone</h1>
+    <p class="dek">Ten rosters, five matchups, and the first week of a first season on a new platform. Here's everything that happened in Week 1.</p>
   </header>
 
   <div class="wrap">
 
-    <a class="recap-entry" href="week-01.html">
-      <div class="week-label">Week 1</div>
-      <h2>Opening Weekend Sets the Tone</h2>
-      <p>Tony Falbo's tuonni put up the week's loudest number, a Pavloski beat a Pavloski, and Keith Day survived the tightest game of the night.</p>
-    </a>
+    <section class="overview">
+      <p class="eyebrow">The Overview</p>
+      <p>Tony Falbo's tuonni squad — the Italian Stallion himself — opened the season with the loudest number on the board: 173.06, built on balance rather than one big name, with six different players clearing double digits. It came at the expense of Robby English's Trooptroop, who fell by 35.70, the widest margin of the week.</p>
+      <p>On the other end, Mark Pavloski's ExSupe put up the week's low score at 131.34, losing to Tyler Olinske's TOleet. Caleb Williams' 41.26 did the damage — the single best individual performance by anyone this week. Somewhere, Mark is writing this one down on a legal pad next to the couch, right below a note about which bird showed up at the feeder this morning.</p>
+      <p>The tightest game of the night belonged to Keith Day, who held off Ben Kosmalski by just 21.34 — Michigan pride outlasting Hurrican Gonzalez's chaos in a matchup that saw Bijan Robinson and Justin Jefferson turn in almost identical stat lines on opposite sidelines. And keep an eye on the Pavloski wing of this league: four of the ten rosters share that surname, and Week 1 didn't do much to keep the peace. Nick Pavloski (MrPav53) — the reigning best player in the league — beat his own brother, commissioner Daine Pavloski (ProfPav), outright. Erin Pavloski (Jarvinators) picked up a win of her own, while Mark dropped his opener. Prof Pav now has to explain to the family group chat that the one person he most wanted to beat is the one person who beat him.</p>
+    </section>
+
+    <section id="matchups">
+      <p class="eyebrow">Matchup by Matchup</p>
+
+      <div class="matchup-recap">
+        <div class="score-line">
+          <span class="win">MrPav53 169.76</span>
+          <span>def.</span>
+          <span>ProfPav 135.96</span>
+        </div>
+        <h2>The "I Know Everything" Season Begins Right on Schedule</h2>
+        <p>39.66 points from Josh Allen was all the ammunition Nick Pavloski needed to open 1-0 — and yes, "MY NAME'S NICK, I KNOW EVERYTHING" is already back in rotation. He beat his own brother and the league's sitting commissioner to do it. Daine got a strong floor game from Jahmyr Gibbs (33.6), but a Pavloski loss to a Pavloski — the exact outcome Prof Pav dreads most, ahead of even a loss to Robby — means a week of second-guessing every roster decision he already made twice.</p>
+      </div>
+
+      <div class="matchup-recap">
+        <div class="score-line">
+          <span class="win">TOleet 153.96</span>
+          <span>def.</span>
+          <span>ExSupe 131.34</span>
+        </div>
+        <h2>Caleb Williams Bails Out TOleet</h2>
+        <p>Tyler Olinske — MeatBear to the rest of the league — got the week's best individual score, 41.26 from Caleb Williams, and needed every bit of it. Mark Pavloski's Kenneth Walker (34.1) kept things close on the scoreboard, but the week's low team total wasn't enough.</p>
+      </div>
+
+      <div class="matchup-recap">
+        <div class="score-line">
+          <span class="win">tuonni 173.06</span>
+          <span>def.</span>
+          <span>Trooptroop 137.36</span>
+        </div>
+        <h2>Two Lions Fans Collide, Tony Comes Out on Top</h2>
+        <p>Tony Falbo's 173.06 was the highest score in the league this week, built on depth rather than one standout — Trey McBride's 24.5 led the way, but six different players cleared double digits. Robby English's 137.36 would have won three of the other four matchups this week; it just ran into a buzzsaw. Both of these guys will tell you they researched every start/sit decision via YouTube breakdown this week — this time, only one of those homework sessions paid off.</p>
+      </div>
+
+      <div class="matchup-recap">
+        <div class="score-line">
+          <span class="win">Jarvinators 156.62</span>
+          <span>def.</span>
+          <span>coachcase44 131.90</span>
+        </div>
+        <h2>Erin Stays Positive, Steve Remains a Coach With Players</h2>
+        <p>Christian Watson's 32.7 points powered Erin Pavloski — the league's lone remaining wife, and by unanimous agreement its most pleasant human being — to a Week 1 win. Steve Case got a solid outing from David Montgomery (28.9), but it wasn't enough. He fielded players. They just didn't do enough.</p>
+      </div>
+
+      <div class="matchup-recap">
+        <div class="score-line">
+          <span class="win">Keith517 162.86</span>
+          <span>def.</span>
+          <span>Kosmalski 141.52</span>
+        </div>
+        <h2>Michigan Man Survives the Week's Nail-Biter</h2>
+        <p>The closest margin of the week — just 21.34 points — came down to a near carbon-copy showcase from Bijan Robinson (31.3) and Justin Jefferson (31.2) on opposite sidelines. Keith Day's depth around that performance, with four other starters in double digits, was the difference over Ben Kosmalski, a.k.a. Hurrican Gonzalez, whose draft-day kicker habit has become the stuff of league legend even in years he behaves himself. Expect Keith to be insufferable about this in a Michigan-branded way all week.</p>
+      </div>
+    </section>
+
+    <section id="trends">
+      <p class="eyebrow">Numbers That Made Us Look Twice</p>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="label">High Score</div>
+          <div class="value">173.06</div>
+          <div class="sub">tuonni &middot; Tony Falbo</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Low Score</div>
+          <div class="value">131.34</div>
+          <div class="sub">ExSupe &middot; Mark Pavloski</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Closest Margin</div>
+          <div class="value">21.34</div>
+          <div class="sub">Keith517 over Kosmalski</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Biggest Blowout</div>
+          <div class="value">35.70</div>
+          <div class="sub">tuonni over Trooptroop</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Top Individual Score</div>
+          <div class="value">41.26</div>
+          <div class="sub">Caleb Williams (QB, CHI) &middot; on TOleet</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Waiver Activity</div>
+          <div class="value">11</div>
+          <div class="sub">successful claims league-wide, plus 7 free-agent moves</div>
+        </div>
+      </div>
+      <p class="waiver-note">Busiest at the wire: Keith Day made three separate waiver claims (San Francisco's defense, Mike Gesicki, Jalen Coker), while both Daine and Nick Pavloski each worked the free-agent pool twice — Nick landing Micah Parsons off the wire in the week's most notable IDP pickup.</p>
+    </section>
 
   </div>
 
