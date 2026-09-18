@@ -89,16 +89,6 @@
   }
   h1.title .accent { color: var(--red-bright); }
 
-  .kickoff {
-    margin-top: 22px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 14px;
-    letter-spacing: 0.08em;
-    color: var(--chalk-dim);
-    text-transform: uppercase;
-  }
-  .kickoff strong { color: var(--red-bright); }
-
   section { padding: 48px 0; border-bottom: 1px solid var(--line); }
   section:last-of-type { border-bottom: none; }
 
@@ -266,19 +256,48 @@
     color: var(--chalk-dim);
     text-transform: uppercase;
   }
+
+  .player {
+    cursor: pointer;
+  }
+  .player.active {
+    border-color: var(--red-bright);
+    background: var(--field-deep);
+  }
+
+  table.roster-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+  }
+  table.roster-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  table.roster-table tr:last-child td { border-bottom: none; }
+  table.roster-table td.slot {
+    color: var(--red-bright);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    width: 70px;
+  }
+  table.roster-table td.pos {
+    color: var(--chalk-dim);
+    text-align: right;
+  }
 </style>
 </head>
 <body>
 
   <div class="marquee">
     <span>N/S FANTASY WORLDWIDE</span>
-    <span><strong>2026 SEASON</strong> · 10 TEAMS · 17 ROUNDS</span>
+    <span id="marquee-status"><strong>2026 SEASON</strong></span>
   </div>
 
   <header class="hero">
     <div class="lockup">EST. 2026</div>
     <h1 class="title">North to South<br><span class="accent">Fantasy Worldwide</span></h1>
-    <div class="kickoff">Kickoff <strong>September 9, 2026</strong></div>
   </header>
 
   <div class="wrap">
@@ -323,18 +342,19 @@
 
     <section id="league">
       <p class="eyebrow">The League</p>
-      <div class="roster">
-        <div class="player"><span class="num">01</span><div class="who"><div class="name">Daine Pavloski</div><div class="handle">ProfPav</div></div></div>
-        <div class="player"><span class="num">02</span><div class="who"><div class="name">Steve Case</div><div class="handle">coachcase44</div></div></div>
-        <div class="player"><span class="num">03</span><div class="who"><div class="name">Nick Pavloski</div><div class="handle">MrPav53</div></div></div>
-        <div class="player"><span class="num">04</span><div class="who"><div class="name">Robby English</div><div class="handle">Trooptroop</div></div></div>
-        <div class="player"><span class="num">05</span><div class="who"><div class="name">Keith Day</div><div class="handle">Keith517</div></div></div>
-        <div class="player"><span class="num">06</span><div class="who"><div class="name">Erin Pavloski</div><div class="handle">Jarvinators</div></div></div>
-        <div class="player"><span class="num">07</span><div class="who"><div class="name">Ben Kosmalski</div><div class="handle">Kosmalski</div></div></div>
-        <div class="player"><span class="num">08</span><div class="who"><div class="name">Mark Pavloski</div><div class="handle">ExSupe</div></div></div>
-        <div class="player"><span class="num">09</span><div class="who"><div class="name">Tyler Olinske</div><div class="handle">TOleet</div></div></div>
-        <div class="player"><span class="num">10</span><div class="who"><div class="name">Tony Falbo</div><div class="handle">tuonni</div></div></div>
+      <div class="roster" id="league-grid">
+        <div class="player" data-roster-id="1"><span class="num">01</span><div class="who"><div class="name">Daine Pavloski</div><div class="handle">ProfPav</div></div></div>
+        <div class="player" data-roster-id="2"><span class="num">02</span><div class="who"><div class="name">Steve Case</div><div class="handle">coachcase44</div></div></div>
+        <div class="player" data-roster-id="3"><span class="num">03</span><div class="who"><div class="name">Nick Pavloski</div><div class="handle">MrPav53</div></div></div>
+        <div class="player" data-roster-id="4"><span class="num">04</span><div class="who"><div class="name">Robby English</div><div class="handle">Trooptroop</div></div></div>
+        <div class="player" data-roster-id="5"><span class="num">05</span><div class="who"><div class="name">Keith Day</div><div class="handle">Keith517</div></div></div>
+        <div class="player" data-roster-id="6"><span class="num">06</span><div class="who"><div class="name">Erin Pavloski</div><div class="handle">Jarvinators</div></div></div>
+        <div class="player" data-roster-id="7"><span class="num">07</span><div class="who"><div class="name">Ben Kosmalski</div><div class="handle">Kosmalski</div></div></div>
+        <div class="player" data-roster-id="8"><span class="num">08</span><div class="who"><div class="name">Mark Pavloski</div><div class="handle">ExSupe</div></div></div>
+        <div class="player" data-roster-id="9"><span class="num">09</span><div class="who"><div class="name">Tyler Olinske</div><div class="handle">TOleet</div></div></div>
+        <div class="player" data-roster-id="10"><span class="num">10</span><div class="who"><div class="name">Tony Falbo</div><div class="handle">tuonni</div></div></div>
       </div>
+      <div class="card" id="roster-panel" style="display: none; margin-top: 20px;"></div>
     </section>
 
   </div>
@@ -408,6 +428,11 @@
         const nflState = await stateRes.json();
         const rosters = await rostersRes.json();
 
+        const marquee = document.getElementById('marquee-status');
+        if (marquee) {
+          marquee.innerHTML = `<strong>2026 SEASON</strong> · WEEK ${nflState.week}`;
+        }
+
         // Show the most recently COMPLETED week (current week minus one) -
         // the in-progress "current" week's matchups won't be final yet.
         const week = nflState.week - 1;
@@ -468,6 +493,74 @@
     }
 
     loadMatchups();
+
+    let rostersCachePromise = null;
+    let playersLiteCachePromise = null;
+    let leagueCachePromise = null;
+
+    function getRosters() {
+      if (!rostersCachePromise) {
+        rostersCachePromise = fetch('data/2026/rosters.json', { cache: 'no-store' }).then((r) => r.json());
+      }
+      return rostersCachePromise;
+    }
+    function getPlayersLite() {
+      if (!playersLiteCachePromise) {
+        playersLiteCachePromise = fetch('data/2026/players-lite.json', { cache: 'no-store' })
+          .then((r) => (r.ok ? r.json() : {}))
+          .catch(() => ({}));
+      }
+      return playersLiteCachePromise;
+    }
+    function getLeague() {
+      if (!leagueCachePromise) {
+        leagueCachePromise = fetch('data/2026/league.json', { cache: 'no-store' }).then((r) => r.json());
+      }
+      return leagueCachePromise;
+    }
+
+    async function showRoster(rosterId, cardEl) {
+      const panel = document.getElementById('roster-panel');
+      document.querySelectorAll('#league-grid .player').forEach((el) => el.classList.remove('active'));
+      cardEl.classList.add('active');
+      panel.style.display = 'block';
+      panel.innerHTML = '<p style="color: var(--chalk-dim); margin: 0;">Loading roster&hellip;</p>';
+
+      try {
+        const [rosters, playersLite, league] = await Promise.all([getRosters(), getPlayersLite(), getLeague()]);
+        const roster = rosters.find((r) => r.roster_id === rosterId);
+        if (!roster) throw new Error('roster ' + rosterId + ' not found');
+
+        const lookup = (pid) => playersLite[pid] || { name: pid, position: '', team: '' };
+        const rowFor = (slot, pid) => {
+          const p = lookup(pid);
+          return `<tr><td class="slot">${slot}</td><td>${p.name}</td><td class="pos">${[p.position, p.team].filter(Boolean).join(' · ')}</td></tr>`;
+        };
+
+        const slotLabels = (league.roster_positions || []).filter((p) => p !== 'BN');
+        const starters = roster.starters || [];
+        const starterRows = starters.map((pid, i) => rowFor(slotLabels[i] || 'STARTER', pid)).join('');
+
+        const starterSet = new Set(starters);
+        const reserveSet = new Set(roster.reserve || []);
+        const bench = (roster.players || []).filter((pid) => !starterSet.has(pid) && !reserveSet.has(pid));
+        const benchRows = bench.map((pid) => rowFor('BN', pid)).join('');
+        const irRows = (roster.reserve || []).map((pid) => rowFor('IR', pid)).join('');
+
+        panel.innerHTML = `
+          <h2>${roster.manager?.teamName || ('Roster ' + rosterId)}</h2>
+          <p style="margin: 0 0 16px; color: var(--chalk-dim);">${roster.manager?.realName || ''}</p>
+          <table class="roster-table"><tbody>${starterRows}${benchRows}${irRows}</tbody></table>
+        `;
+      } catch (err) {
+        panel.innerHTML = '<p style="color: var(--chalk-dim); margin: 0;">Roster unavailable right now.</p>';
+        console.error('Failed to load roster:', err);
+      }
+    }
+
+    document.querySelectorAll('#league-grid .player').forEach((el) => {
+      el.addEventListener('click', () => showRoster(parseInt(el.dataset.rosterId, 10), el));
+    });
   </script>
 
 </body>
