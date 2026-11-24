@@ -8,7 +8,15 @@
     "metadata": {
       "allow_pn": "on",
       "avatar": "https://sleepercdn.com/uploads/9e28d5cfefd0a9de3853ca23d80fdd75.jpg",
-      "mention_pn": "on"
+      "league_report_pn": "off",
+      "mention_pn": "on",
+      "player_nickname_update": "off",
+      "team_name_update": "off",
+      "trade_block_pn": "off",
+      "transaction_commissioner": "off",
+      "transaction_free_agent": "off",
+      "transaction_trade": "off",
+      "transaction_waiver": "off"
     },
     "settings": null,
     "user_id": "1000593498950688768"
